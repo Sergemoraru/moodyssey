@@ -1,8 +1,8 @@
-const createURL = (path) => {
+const createURL = (path: string) => {
     return window.location.origin + path
 }
 
-export const updatedEntry = async (id, content) => {
+export const updatedEntry = async (id: any, content: any) => {
     const res = await fetch(new Request(createURL(`/api/journal/${id}`), {
         method: 'PATCH',
         body: JSON.stringify({ content })
